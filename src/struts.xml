@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+                <!DOCTYPE struts PUBLIC
+                        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+                        "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	<package name="Action" extends="struts-default" namespace="/">
+		<action name="index_*" class="Action.MainServlet" method="{1}">
+			<result name="success">/WEB-INF/index.jsp</result>
+			<result name="failed">/WEB-INF/web/404.jsp</result>
+			<result name="login">/WEB-INF/user/login.jsp</result>
+			<result name="load">/WEB-INF/user/showuser.jsp</result>
+			<result name="showparas">/WEB-INF/sess/showpara.jsp</result>
+		</action>
+		<action name="parse" class="Action.DateAction" method="execute">
+			<result name="success">/WEB-INF/dateparse/setdate.jsp</result>
+			<result name="showdate">/WEB-INF/dateparse/showdate.jsp</result>
+		</action>
+	</package>
+</struts>
